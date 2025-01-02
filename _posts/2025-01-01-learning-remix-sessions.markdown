@@ -91,7 +91,7 @@ auth.use(
     // if we have a user in context (since registration creates a user from registration), return it
     if (context?.user) {
       const newUser = context.user as User;
-      newUser.sidebarCollapsed = false;
+      newUser.sidebarCollapsed = false; // -- HERE --
       return newUser;
     }
 
