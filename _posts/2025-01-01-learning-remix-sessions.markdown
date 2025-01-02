@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "learning remix: tracking user preferences using session cookies"
-date:   2025-01-21 02:03:00 -0700
+date:   2025-01-01 02:03:00 -0700
 categories: programming ts webdev
 ---
 
