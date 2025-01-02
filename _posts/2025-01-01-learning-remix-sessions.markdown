@@ -19,7 +19,7 @@ is rendered (does the user want dark mode or light mode or did they previously h
 / light mode problem initially, I solved it (very unsatisfactorily, might I add) using code in the `root.tsx` of my app that might
 have looked something like:
 
-```tsx app/root.tsx
+```tsx
 import { useLoaderData } from "@remix-run/react";
 
 export const loader = async () => {
@@ -36,15 +36,13 @@ export default function App() {
       <head>
         {/* other items... */}
         <script
-          {% raw %}
-          dangerouslySetInnerHTML={{
+          {% raw %}dangerouslySetInnerHTML={{
             __html: `
               (function() {
                 // some code to set dark mode or something of the sort
               })();
             `,
-          }}
-          {% endraw %}
+          }}{% endraw %}
         />
       </head>
       <body>
@@ -77,7 +75,8 @@ developers, this might've been obvious but it was not to me.
 
 To get this working, I added a sidebarCollapsed to the User cookie created on log in / register and added to the user's
 browser:
-```tsx auth.server.ts
+
+```tsx
 export type User = {
   id: string;
   email: string;
@@ -130,7 +129,8 @@ That's simple enough.
 Since the user has logged in at this point, the `requireUser` function that verifies they're logged in
 provides the state we need to power the component that renders our Ui layout, `AppLayout`. This state comes
 from the session cookie in the browser:
-```tsx auth.server.ts
+
+```tsx
 export async function requireUser(request: Request) {
   const user = await auth.isAuthenticated(request);
   if (!user) {
@@ -147,7 +147,8 @@ To tie it all together, we are missing:
 
 The hook encapsulates code that would have otherwise been in the `AppLayout` component. This code works to initialize,
 modify current state and update session cookie information:
-```tsx useSidebarState.ts
+
+```tsx
 import { useFetcher } from "@remix-run/react";
 import { useCallback, useState } from "react";
 
@@ -177,7 +178,8 @@ export function useSidebarState(initialCollapsed: boolean) {
 
 The hook uses a fetcher to perform AJAX-like calls to a provided route. In this case, the route provides a response
 to the browser that lets it know to update the session cookie it currently holds:
-```tsx api.preferences.session.ts
+
+```tsx
 import { ActionFunction, json } from "@remix-run/node";
 import { sessionStorage } from "~/services/auth.server";
 
@@ -207,7 +209,8 @@ export const action: ActionFunction = async ({ request }) => {
 ```
 
 Finally, we can use the hook in our `AppLayout` component like so:
-```tsx AppLayout.tsx
+
+```tsx
 // Imports and Types
 
 export function AppLayout({
