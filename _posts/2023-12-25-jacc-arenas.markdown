@@ -7,7 +7,12 @@ categories: programming compilers c
 
 # with chatgpt and some festive reasoning
 
-Merry Christmas. So far in [alloc.c](https://github.com/pepplejoshua/jacc/blob/master/src/alloc.c) (chapter 2 of book), a few things have confused me. But with a combination of [this wonderful blog post](https://www.rfleury.com/p/untangling-lifetimes-the-arena-allocator) by Ryan Fleury, [ChatGPT-4 conversation](https://chat.openai.com/share/cbc113ed-e06f-40bc-be80-dbd3765dcff5) and near constant thinking about what the code meant, I have come to a better understanding of this code:
+While reading chapter 2 of "A Retargetable C Compiler Design and Implementation" by Christopher W. Fraser, David R. Hanson,
+I came across some allocator code which I have written in [alloc.c](https://github.com/pepplejoshua/jacc/blob/master/src/alloc.c)
+a few things have confused me. But with a combination of
+[this wonderful blog post](https://www.rfleury.com/p/untangling-lifetimes-the-arena-allocator) by Ryan Fleury,
+[ChatGPT-4 conversation](https://chat.openai.com/share/cbc113ed-e06f-40bc-be80-dbd3765dcff5) and actually thinking
+about what the code meant, I have come to a better understanding of this code:
 
 ```c
 void *allocate(unsigned long n, unsigned a) {

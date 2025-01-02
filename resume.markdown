@@ -27,20 +27,6 @@ permalink: /resume/
 - **[proto compiler](https://github.com/pepplejoshua/proto)**
   - A compiler for a custom language called `proto` written in `Rust`.
 
-- **[beanstalk](https://github.com/pepplejoshua/beanstalk)**
-  - a web app written for the management of a small farm business.
-  - it is developed with the `Remix` framework and uses `TypeScript`, `React`, `Prisma`, `MongoDB` and
-  `TailwindCSS`.
-
-# business projects
-- **stratum labs**
-  - started with 4 of my technically savvy friends to offer web and app development services to local businesses.
-  - we are building out our first project, project `RuthApp`, which is a `Flutter` app which helps people in the community assess whether they are being abused and what they can do about it.
-
-- **greenbean farms**
-  - started with 2 friends and my older sister to offer fresh produce at affordable prices to the community.
-  - we are currently in the process of growing our snail business in Port Harcourt, Nigeria and using `beanstalk` to streamline the management of the business.
-
 # interests
 - **programming**
   - I love programming and I am always looking for new projects to work on.

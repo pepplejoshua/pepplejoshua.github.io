@@ -21,17 +21,16 @@
 title: writings
 email: pepplejoshuatams@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  this blog will hold my writings (programming and non-programming stuff).
+  personal notes
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https:/pepplejoshua.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: iwarilama
-github_username:  pepplejoshua
+github_username: pepplejoshua
 
 # Build settings
 theme: minima
 plugins:
   - jekyll-feed
-
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
