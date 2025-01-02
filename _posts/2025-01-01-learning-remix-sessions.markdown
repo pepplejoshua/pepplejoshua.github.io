@@ -36,6 +36,7 @@ export default function App() {
       <head>
         {/* other items... */}
         <script
+          {% raw %}
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
@@ -43,6 +44,7 @@ export default function App() {
               })();
             `,
           }}
+          {% endraw %}
         />
       </head>
       <body>
