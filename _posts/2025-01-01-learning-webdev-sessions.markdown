@@ -1,11 +1,9 @@
 ---
 layout: post
-title:  "learning remix: tracking user preferences using session cookies"
+title:  "learning webdev: tracking user preferences using session cookies"
 date:   2025-01-01 02:03:00 -0700
 categories: programming ts webdev
 ---
-
-# learning webdev: tracking user preferences using session cookies in remix.
 
 Starting a series of short notes on things I learn doing webdev. I have been trying [Remix](https://remix.run/) for a little
 while to write web applications. Prior to using Remix, my only experience working in a large webdev codebase (professionally

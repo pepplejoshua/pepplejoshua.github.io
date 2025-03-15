@@ -5,8 +5,6 @@ date:   2023-12-25 23:42:22 -0700
 categories: programming compilers c
 ---
 
-# with chatgpt and some festive reasoning
-
 While reading chapter 2 of "A Retargetable C Compiler Design and Implementation" by Christopher W. Fraser, David R. Hanson,
 I came across some allocator code which I have written in [alloc.c](https://github.com/pepplejoshua/jacc/blob/master/src/alloc.c)
 a few things have confused me. But with a combination of
