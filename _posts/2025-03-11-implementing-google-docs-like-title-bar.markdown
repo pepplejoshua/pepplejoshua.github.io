@@ -37,8 +37,6 @@ This blog will summarize the `InlineEditor` component solves the problems I set 
 
 
 ### Properties and Internal State
----
-
 It takes a few properties, mostly to handle how to respond to user actions. The interface is defined as:
 ```typescript
 interface InlineEditorProps {
@@ -78,8 +76,6 @@ const inputRef = useRef<HTMLInputElement>(null);
 ```
 
 ### Hidden Span, Visible Input and Width Calculation
----
-
 The hidden span always contains the same content and styling as the input field at any given time. This is useful for computing the
 width of the visible input field. It looks like this:
 ```tsx
