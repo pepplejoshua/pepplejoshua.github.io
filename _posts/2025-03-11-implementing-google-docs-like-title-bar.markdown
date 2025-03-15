@@ -125,9 +125,9 @@ The visible input field looks like this:
         : "border-transparent hover:border-gray-500/50 hover:bg-gray-900/50 cursor-pointer"
     }
   `}
-  style={{
+  {% raw %}style={{
     width: width ? `${width}px` : "auto",
-  }}
+  }}{% endraw %}
   title={!isEditing ? "Click to edit" : undefined}
 />
 ```
