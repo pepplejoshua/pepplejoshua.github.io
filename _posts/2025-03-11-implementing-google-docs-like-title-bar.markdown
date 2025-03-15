@@ -40,7 +40,7 @@ This blog will summarize the `InlineEditor` component solves the problems I set 
 ---
 
 It takes a few properties, mostly to handle how to respond to user actions. The interface is defined as:
-```tsx
+```typescript
 interface InlineEditorProps {
   value: string;              // Starting value of the input field
   onChange: (newValue: string) => void;  // Handler for value changes
@@ -53,27 +53,27 @@ interface InlineEditorProps {
 
 For internal state, it has 3:
 1. Whether it's in edit mode or not.
-```tsx
+```typescript
 const [isEditing, setIsEditing] = useState(false);
 ```
 
 2. The value from an edit
-```ts
+```typescript
 const [editValue, setEditValue] = useState(value);
 ```
 
 3. The current width of the visible input field
-```ts
+```typescript
 const [width, setWidth] = useState<number | null>(null);
 ```
 
 4. A reference to the hidden span for direct DOM access
-```ts
+```typescript
 const measureRef = useRef<HTMLSpanElement>(null);
 ```
 
 5. A reference to the visible input field for direct DOM access
-```ts
+```typescript
 const inputRef = useRef<HTMLInputElement>(null);
 ```
 
@@ -135,7 +135,7 @@ The visible input field looks like this:
 It is one chunky input. It has spellchecking disabled to remove those annoying spellcheck underlines, allows toggling read-only mode,
 has a length limit for character count, accepts events handlers for edits, clicks, pressing esc or enter, clicking off it as well as its
 computed width. It can be directly accessed through `inputRef`. The internal event handlers are:
-```ts
+```typescript
 // handle special case buttons like Escpae and Enter
 const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
   if (e.key === "Enter") {
@@ -178,7 +178,7 @@ In order to efficiently detect changes (changes in width and value) for the hidd
 2. `MutationObserver`: A browser API that watches for changes in DOM elements
 
 They are set up in a `useEffect()` that runs only when the component first mounts. That code looks like this:
-```ts
+```typescript
 useEffect(() => {
   if (!measureRef.current) return; // if the node for the hidden span does not exist, return
 
