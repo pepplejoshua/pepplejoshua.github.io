@@ -221,7 +221,7 @@ watched by 2 observers for changes in size and content. If either observer notic
 the width of the hidden span and smoothly updates the width of the visible input.
 
 What I still can't understand is why it works out smoothly in the Ui without any jank. When I ask Claude why this works out better
-compared to other solutions, it says (summarized as):
+compared to other solutions, it says (summarized as these 4 points):
 
 1. The Character Width Calculation method tries to measure each character's width and sum them up, without accounting for font
 kerning. This leads to incorrect calculations and jittery updates, while being computationally expensive. This felt directionally correct
@@ -234,7 +234,7 @@ the input field would be wildly incorrect. It took too much effort with no obvio
 
 3. The Monospace Font solution forced me to use a font I had no interest in using. Never a solution.
 
-The Observer Pattern, which ended up working perfectly, succeeds by using browser-native APIs to automatically detect and respond to
+4. The Observer Pattern, which ended up working perfectly, succeeds by using browser-native APIs to automatically detect and respond to
 content and size changes, letting the browser handle all timing and measurement complexities. It covers all the edge cases I didn't
 from the MHS approach (typing, pasting, undo/redo) and simplifies the code by eliminating the need to manually compute widths or determine
 when some Ui component has changed size and then try to respond in time to render smoothly. I wish there was a browser / React expert I could
