@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "learning webdev: implementing a 'google docs-like' title bar in remix"
+title:  "learning webdev: implementing a 'google docs-like' title bar in react"
 date:   2025-03-11 14:03:00 -0700
 categories: programming ts webdev
 ---
